@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Feedback;
+use App\Models\User;
+use Auth;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user_id=Auth::user()->id;
+
+        $feedbacks=Feedback::find($user_id);
+        return view('home', ["all_feedbacks"=>$feedbacks, "user_id"=>$user_id]);
+
     }
 }
