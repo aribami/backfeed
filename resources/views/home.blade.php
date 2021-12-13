@@ -5,7 +5,7 @@
         <div class="col-md-8">
 
 
-            @foreach ( $all_feedbacks as $feedback )
+            @foreach ($feedbacks as $feedback )
             <div class="card mt-3">
                 <div class="card-header">
                     {{$feedback->title}}
