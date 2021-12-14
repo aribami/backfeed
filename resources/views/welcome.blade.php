@@ -17,11 +17,17 @@
 @endsection
 @section("content")
 <div class="container">
-        <h1 class="display-5">drop your datty comments here in primvate</h1>
-        <p class="text-dark">
-            backfeed is an app where you can give anonymous feedback, go ahead and write your feedback here. Please dont be cumshy, and definitely
-            not pumshy, because cumshy@pumshy is already smobaby and my eveeethiiingggg.
-        </p>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="display-5">Welcome to backfeed :)</h1>
+            <p class="text-dark">
+                You can use backfeed to collect anonymous feedback.
+                Please keep in mind that the person receiving your feedback is human too.
+                Please be kind and keep the discourse civil.
+                Thankyou.
+            </p>
+        </div>
+    </div>
 </div>
 
 
