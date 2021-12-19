@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,11 @@ Route::get('feedback/{user_id}', function ($user_id) {
         return view("form", ["user_id"=>$user_id]);
 });
 Auth::routes();
-Route::post('feedback/{user_id}/submit', function (User $user) {
- $feedback=request()->all();
- ddd($feedback);
-
+Route::post('feedback/{id}', function (User $user) {
+    ddd($user->id);
+    $name=request("name");
+    $text=request("feedback-text");
+    $user->feedback()->create(["title"=>"feedback", "content"=>$text, "author"=>$name]);
+    return redirect()->back();
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

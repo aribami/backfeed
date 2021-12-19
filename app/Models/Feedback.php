@@ -11,4 +11,5 @@ class Feedback extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    protected $fillable=["title", "content", "author"];
 }

@@ -21,7 +21,7 @@ class CreateFeedbackTable extends Migration
             $table->string("title");
             $table->text("content");
             $table->string("author")->nullable();
-            $table->timestamp("posted_at");
+            $table->timestamps();
 
         });
     }
