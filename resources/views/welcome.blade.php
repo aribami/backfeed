@@ -26,6 +26,14 @@
                 Please be kind and keep the discourse civil.
                 Thankyou.
             </p>
+
+                <a  href="/home">
+                    <button class="btn btn-dark">
+                go to your dashboard
+            </button>
+
+            </a>
+
         </div>
     </div>
 </div>

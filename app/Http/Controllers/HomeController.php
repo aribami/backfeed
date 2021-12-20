@@ -27,8 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user_id=Auth::user()->id;
         $feedbacks=Auth::user()->feedback;
-        return view('home', ["feedbacks"=>$feedbacks]);
+        return view('home', ["feedbacks"=>$feedbacks, "user_id"=>$user_id]);
 
     }
 }
