@@ -1,6 +1,11 @@
 @extends("layouts.app")
 @section("content")
 <div class="container">
+@if(session('success'))
+    <div class="alert alert-success">
+        Feedback submitted successfully
+    </div>    
+@endif
 <form method="POST" action="/feedback/{{$user_id}}">
     @csrf
     <div class="mb-3">

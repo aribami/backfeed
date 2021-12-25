@@ -17,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
     /**
@@ -26,9 +26,10 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        $feedbacks=Auth::user()->feedback;
-        return view('home', ["feedbacks"=>$feedbacks]);
+    {	
+	$user_id = Auth::user()->id;
+        $feedbacks=Auth::user()->feedback->sortByDesc('created_at');
+        return view('home', ["feedbacks"=>$feedbacks,"user_id"=>$user_id]);
 
     }
 }

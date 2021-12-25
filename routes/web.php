@@ -20,12 +20,11 @@ Route::get('/', function () {
 Route::get('feedback/{user_id}', function ($user_id) {
         return view("form", ["user_id"=>$user_id]);
 });
-Auth::routes();
-Route::post('feedback/{id}', function (User $user) {
-    ddd($user->id);
+Auth::routes(['verify'=>true]);
+Route::post('feedback/{user}', function (User $user) {
     $name=request("name");
     $text=request("feedback-text");
     $user->feedback()->create(["title"=>"feedback", "content"=>$text, "author"=>$name]);
-    return redirect()->back();
+    return redirect()->back()->withSuccess('feedback successfully submitted');
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
