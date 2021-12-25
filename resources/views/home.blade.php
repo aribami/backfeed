@@ -16,11 +16,11 @@
 				@php
 					$personal_submission_page_url=URL::to("/feedback/$user_id");
 				@endphp
-					 <a href="https://www.facebook.com/sharer/sharer.php?u={{$personal_submission_page_url}}&t=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-facebook"></i></a>
-					 <a href="https://twitter.com/share?url={{$personal_submission_page_url}}&text=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-twitter"></i></a>
-					 <a href="mailto:?subject=Send me your feedback on backfeed!&body={{$personal_submission_page_url}}" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-envelope"></i></a>
-					 <a href="whatsapp://send?text={{$personal_submission_page_url}}" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-whatsapp"></i></a>
-					 <a href="https://www.linkedin.com/shareArticle?mini=true&url={{$personal_submission_page_url}}&t=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-linkedin"></i></a>
+					 <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={{$personal_submission_page_url}}&t=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-facebook"></i></a>
+					 <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/share?url={{$personal_submission_page_url}}&text=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-twitter"></i></a>
+					 <a target="_blank" rel="noopener noreferrer" href="mailto:?subject=Send me your feedback on backfeed!&body={{$personal_submission_page_url}}" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-envelope"></i></a>
+					 <a target="_blank" rel="noopener noreferrer" href="whatsapp://send?text={{$personal_submission_page_url}}" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-whatsapp"></i></a>
+					 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/shareArticle?mini=true&url={{$personal_submission_page_url}}&t=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-linkedin"></i></a>
 				 </div>
 				<h6>Or copy link</h6>
 				<div class="field m-1 d-flex align-items-center justify-content-between border rounded">

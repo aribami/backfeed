@@ -23,8 +23,10 @@ Route::get('feedback/{user_id}', function ($user_id) {
 Auth::routes(['verify'=>true]);
 Route::post('feedback/{user}', function (User $user) {
     $name=request("name");
+    $author="Anonymous";
+    if(!empty($name))$author=$name;
     $text=request("feedback-text");
-    $user->feedback()->create(["title"=>"feedback", "content"=>$text, "author"=>$name]);
+    $user->feedback()->create(["title"=>"Feedback by {$author}", "content"=>$text, "author"=>$name]);
     return redirect()->back()->withSuccess('feedback successfully submitted');
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
