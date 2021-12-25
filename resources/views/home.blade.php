@@ -3,39 +3,30 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-	    <div class="card mt-3">
-                <div class="card-header">
-                    welcome!
-                </div>
-
-                <div class="card-body">
-                    <a href="/feedback/{{$user_id}}">click here to go to your feedback submission page, share that page with your friends to receive their feedback</a>
-                </div>
-            </div>
-	    <button type="button" class="m-2 btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#myModel" id="shareBtn" data-bs-placement="top" title="Click Me!"> Share </button> <!-- Modal -->
+	    <button type="button" class="mr-2 mt-2 btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#myModel" id="shareBtn" data-bs-placement="top" title="Click Me!"> Share Feedback submission page </button> <!-- Modal -->
 		<div class="modal fade" id="myModel" tabindex="-1" aria-labelledby="myModelLabel" aria-hidden="true">
 		    <div class="modal-dialog">
 			<div class="modal-content">
 			    <div class="modal-header">
-				<h5 class="modal-title" id="myModelLabel">Share</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				<h5 class="modal-title" id="myModelLabel">Share the link to your feedback submission page</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			    </div>
 			    <div class="modal-body">
 				<h6>Share this link via</h6>
-				<div class="d-flex m-1 align-items-center">
-					 <a href="#" class="fs-5 m-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-facebook"></i></a>
-					 <a href="#" class="fs-5 m-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-twitter"></i></a>
-					 <a href="#" class="fs-5 m-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-instagram"></i></a>
-					 <a href="#" class="fs-5 m-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-whatsapp"></i></a>
-					 <a href="#" class="fs-5 m-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-telegram"></i></a>
-				 </div>
-				<h6>Or copy link</h6>
+				<div class="d-flex mr-1 my-1 align-items-center">
 				@php
 					$personal_submission_page_url=URL::to("/feedback/$user_id");
 				@endphp
-				<div class="field m-1 d-flex align-items-center justify-content-between border">
-					<i class="bi bi-link-45deg"></i> <input readonly class="form-control border-0" type="text" value="{{$personal_submission_page_url}}">
+					 <a href="https://www.facebook.com/sharer/sharer.php?u={{$personal_submission_page_url}}&t=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-facebook"></i></a>
+					 <a href="https://twitter.com/share?url={{$personal_submission_page_url}}&text=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-twitter"></i></a>
+					 <a href="mailto:?subject=Send me your feedback on backfeed!&body={{$personal_submission_page_url}}" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-envelope"></i></a>
+					 <a href="whatsapp://send?text={{$personal_submission_page_url}}" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-whatsapp"></i></a>
+					 <a href="https://www.linkedin.com/shareArticle?mini=true&url={{$personal_submission_page_url}}&t=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-linkedin"></i></a>
+				 </div>
+				<h6>Or copy link</h6>
+				<div class="field m-1 d-flex align-items-center justify-content-between border rounded">
+					<i class="p-1 m-1 bi bi-link-45deg text-dark"></i> <input readonly class="form-control border-0" type="text" value="{{$personal_submission_page_url}}">
 					<button type="button" class="btn btn-clipboard" title="Copy to clipboard">
-						<i class="bi bi-clipboard"></i> 
+						<i class="bi bi-clipboard text-dark"></i> 
 					</button>
 				</div>
 			    </div>
@@ -78,7 +69,7 @@ document.addEventListener('DOMContentLoaded',function(e){
 	copyBtn.innerHTML = '<i class="bi bi-clipboard-check text-success"></i>';
 	setTimeout(()=>{
 		field.classList.remove('active');
-		copyBtn.innerHTML = '<i class="bi bi-clipboard"></i>';
+		copyBtn.innerHTML = '<i class="bi bi-clipboard text-dark"></i>';
 		},5000)
 	}
 })
