@@ -19,9 +19,22 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 class="display-5">Welcome to backfeed :)</h1>
-            <p class="text-dark">
-                You can use backfeed to collect anonymous feedback.
+	    <h1 class="display-5">Simple</h1>
+	    <h1 class="display-5">No BS</h1>
+	    <h1 class="display-5">Feedback.</h1>
+	    <p class="text-dark">
+		Start collecting organic feedback in just a couple of steps.
+	    </p>
+	    <p class="text-dark">
+		Sign up for backfeed using your email id, share your unique feedback form link with your target audience and start collecting feedback right away.
+	    </p>
+	    <p class="text-dark"> 
+		When you submit your feedback on backfeed, only the data that you provide is recorded and nothing else. You may even opt to remain anonymous.
+	    </p>
+	    <p class="text-dark">
+		Get started with backfeed today. 
+	    </p>
+            <p class="text-secondary">
                 Please keep in mind that the person receiving your feedback is human too.
                 Please be kind and keep the discourse civil.
                 Thankyou.
