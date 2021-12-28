@@ -1,6 +1,9 @@
 @extends("layouts.app")
 @section("content")
 <div class="container">
+@foreach ($errors->all() as $error)
+    <div class="alert alert-danger">{!! $errors->first() !!}</div>
+@endforeach
 @if(session('success'))
     <div class="alert alert-success">
         Feedback submitted successfully

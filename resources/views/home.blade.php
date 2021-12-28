@@ -26,7 +26,7 @@
 				<div class="field m-1 d-flex align-items-center justify-content-between border rounded">
 					<i class="p-1 m-1 bi bi-link-45deg text-dark"></i> <input readonly class="form-control border-0" type="text" value="{{$personal_submission_page_url}}">
 					<button type="button" class="btn btn-clipboard" title="Copy to clipboard">
-						<i class="bi bi-clipboard text-dark"></i> 
+						<i class="bi bi-clipboard text-dark"></i>
 					</button>
 				</div>
 			    </div>
@@ -42,14 +42,14 @@
                 <div class="card-body">
                     {{$feedback->content}}
 
-		</div>
+		    </div>
                 <div class="card-footer">
                     {{$feedback->created_at->diffForHumans()}}
                 </div>
             </div>
 
 	    @endforeach
-	   
+        {{$feedbacks->links()}}
         </div>
     </div>
 </div>

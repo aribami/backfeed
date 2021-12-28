@@ -4,6 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{!! $errors->first() !!}</div>
+            @endforeach
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 

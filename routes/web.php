@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('feedback/{user_id}',[FeedbackController::class, 'create'] );
+
 Auth::routes(['verify'=>true]);
 
 Route::post('feedback/{user}',[FeedbackController::class, 'store'] );
