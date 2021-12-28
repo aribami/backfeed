@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\FeedbackController;
 use App\Models\User;
 
 /*
@@ -17,16 +19,9 @@ use App\Models\User;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('feedback/{user_id}', function ($user_id) {
-        return view("form", ["user_id"=>$user_id]);
-});
+Route::get('feedback/{user_id}',[FeedbackController::class, 'create'] );
 Auth::routes(['verify'=>true]);
-Route::post('feedback/{user}', function (User $user) {
-    $name=request("name");
-    $author="Anonymous";
-    if(!empty($name))$author=$name;
-    $text=request("feedback-text");
-    $user->feedback()->create(["title"=>"Feedback by {$author}", "content"=>$text, "author"=>$name]);
-    return redirect()->back()->withSuccess('feedback successfully submitted');
-});
+
+Route::post('feedback/{user}',[FeedbackController::class, 'store'] );
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

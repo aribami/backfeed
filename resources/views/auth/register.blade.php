@@ -62,7 +62,7 @@
                         </div>
 			<div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-				{!! RecaptchaV3::field('register') !!}
+				                {!! RecaptchaV3::field('register') !!}
                                 <button value="Register" type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>

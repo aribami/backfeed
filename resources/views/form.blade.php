@@ -4,7 +4,7 @@
 @if(session('success'))
     <div class="alert alert-success">
         Feedback submitted successfully
-    </div>    
+    </div>
 @endif
 <form method="POST" action="/feedback/{{$user_id}}">
     @csrf
@@ -20,6 +20,7 @@
       <input type="checkbox" onclick="disableEnableField()" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Remain Anonymous</label>
     </div>
+    {!! RecaptchaV3::field('register') !!}
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
@@ -30,12 +31,12 @@ function disableEnableField(){
 
     if(disabled==0){ //disable
      document.getElementById('nameField').disabled = true;
-       disabled=1; 
-     } 
+       disabled=1;
+     }
     else{  //enable again
      document.getElementById('nameField').disabled = false;
-      disabled=0; 
-    } 
+      disabled=0;
+    }
 }
 </script>
 
