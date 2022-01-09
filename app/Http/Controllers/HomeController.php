@@ -27,9 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-	    $user_id = Auth::user()->id;
-        $feedbacks = Feedback::where("user_id", "=", $user_id)->orderBy('created_at', 'desc')->paginate(10);
-        return view('home', ["feedbacks"=>$feedbacks,"user_id"=>$user_id]);
+	    $user = Auth::user();
+        $feedbacks = Feedback::where("user_id", "=", $user->id)->orderBy('created_at', 'desc')->paginate(10);
+        return view('home', ["feedbacks"=>$feedbacks,"user"=>$user]);
 
     }
 }

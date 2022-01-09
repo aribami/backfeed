@@ -14,7 +14,7 @@
 				<h6>Share this link via</h6>
 				<div class="d-flex mr-1 my-1 align-items-center">
 				@php
-					$personal_submission_page_url=URL::to("/feedback/$user_id");
+					$personal_submission_page_url=URL::to("/feedback/$user->unique_handle");
 				@endphp
 					 <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={{$personal_submission_page_url}}&t=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-facebook"></i></a>
 					 <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/share?url={{$personal_submission_page_url}}&text=Send me your feedback on backfeed!" class="fs-5 mr-1 d-flex align-items-center justify-content-center"><i class="text-dark fs-2 m-1 bi bi-twitter"></i></a>

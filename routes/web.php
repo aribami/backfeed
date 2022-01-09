@@ -19,10 +19,10 @@ use App\Models\User;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('feedback/{user_id}',[FeedbackController::class, 'create'] );
+Route::get('feedback/{user:unique_handle}',[FeedbackController::class, 'create'] );
 
 Auth::routes(['verify'=>true]);
 
-Route::post('feedback/{user}',[FeedbackController::class, 'store'] );
+Route::post('feedback/create/{user:unique_handle}',[FeedbackController::class, 'store'] );
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

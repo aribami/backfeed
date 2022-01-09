@@ -13,9 +13,9 @@ class FeedbackController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create($user_id)
+    public function create(User $user)
     {
-        return view('form',['user_id'=>$user_id]);
+        return view('form',['user'=>$user]);
     }
 
     /**
