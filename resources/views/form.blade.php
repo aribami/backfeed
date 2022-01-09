@@ -9,7 +9,7 @@
         Feedback submitted successfully
     </div>
 @endif
-<form method="POST" action="/feedback/{{$user_id}}">
+<form method="POST" action="/feedback/create/{{$user->unique_handle}}">
     @csrf
     <div class="mb-3">
       <label for="name" class="form-label">Name/Nickname</label>
